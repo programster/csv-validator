@@ -1,0 +1,24 @@
+version: '3'
+services:
+  validator:
+    container_name: wiki
+    image: mediawiki
+    restart: always
+    ports:
+      - 80:80
+    links:
+      - database
+
+  database:
+    image: mariadb
+    container_name: db
+    restart: always
+    ports:
+        - 3306:3306
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: my_wiki
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: example
+    volumes:
+       - $HOME/volumes/validator/db:/var/lib/mysql
