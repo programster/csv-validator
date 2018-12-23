@@ -1,0 +1,31 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "CSV Validator",
+        "description": "A validation service written in PHP and deployed through docker.",
+        "version": "1.0.0"
+    },
+    "host": "vida-api.irap.org",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/validate": {
+            "post": {
+                "tags": [],
+                "summary": "Add a validation request to the queu",
+                "description": "Add a validation request to the queu",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Validation succeeded."
+                    }
+                }
+            }
+        }
+    }
+}
